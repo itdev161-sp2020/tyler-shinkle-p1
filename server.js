@@ -21,7 +21,7 @@ app.use(
 //API endpoints
 //any get request will send this in response
 app.get('/messages',async (req,res) =>{
-    const messages = await msg.find({});
+    const messages = await msg.find({}).sort({_id:-1});
     console.log("GET REQUEST SENT!");
     try{
         res.send(messages);

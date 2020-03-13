@@ -1,14 +1,17 @@
 import React from 'react';
 
 export default class Modal extends React.Component{
+   // create a state object with a msg key / value pair
     state={
         msg: ''
     }
     
+    //when this function is called it modifies our states msg value
     onChange = (e:any) =>{
         this.setState({[e.target.name]:e.target.value});
     }
 
+    //this posts our states msg value to our API
     postData(msg:String){
         fetch('http://localhost:5000/api/messages',{
             method:'POST',
@@ -22,6 +25,7 @@ export default class Modal extends React.Component{
         })
     }
 
+    //render a form where the with relevant event handlers
     render(){
         return(
             <div className="modal">
