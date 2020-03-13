@@ -20,6 +20,9 @@ app.use(
 
 //API endpoints
 //any get request will send this in response
+//the sort will sort our messages in descending 
+//order according to their _id value. This way 
+//our newest messages will sit on top...
 app.get('/messages',async (req,res) =>{
     const messages = await msg.find({}).sort({_id:-1});
     console.log("GET REQUEST SENT!");

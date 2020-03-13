@@ -26,6 +26,8 @@ export default class Modal extends React.Component{
     }
 
     //render a form where the with relevant event handlers
+    //arrow function necessary to decouple event target from 'this'
+    //in on click method
     render(){
         return(
             <div className="modal">
