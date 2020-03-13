@@ -10,7 +10,7 @@ const app = express();
 //connect to database
 connectDatabase();
 
-//configure middleware
+//configure middleware (allow cors for front-end)
 app.use(express.json({extended:false}));
 app.use(
     cors({
@@ -21,6 +21,7 @@ app.use(
 //API endpoints
 //any get request will send this in response
 app.get('/messages',async (req,res) =>{
+    //set messages to all found msg documents.
     const messages = await msg.find({});
     console.log("GET REQUEST SENT!");
     try{
