@@ -5,10 +5,12 @@ import Modal from './modal';
 
 class App extends React.Component{
   
+  //set state with a show modal property
   state ={
     showModal: false
   }
 
+  //this function will toggle our modals visibility
   stateChange = () =>{
     this.setState({
       showModal: !this.state.showModal

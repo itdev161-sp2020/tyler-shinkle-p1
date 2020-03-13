@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+//define document schema
 const msgSchema = new mongoose.Schema({
     message:{
         type:String,
@@ -8,6 +9,8 @@ const msgSchema = new mongoose.Schema({
     }
 });
 
+//define exported constant with name msg and schema
+//this is a model.
 const msg = mongoose.model('msg',msgSchema);
 
 export default msg;

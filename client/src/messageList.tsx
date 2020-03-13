@@ -5,12 +5,18 @@ import axios from 'axios';
 import Message from './Message';
 
 export default class MessageList extends React.Component{
+    //used for unique keys for each ul div
     count=0;
 
+    //a state value to refer to our messages, of our
+    //custom type message
     state={
         messages: Array<Message>()
     }
 
+    //send a get request to our API, log to console
+    //and set our states message property to the 
+    //responses data
     componentDidMount(){
         axios.get(`http://localhost:5000/messages`)
             .then(res =>{
@@ -19,6 +25,7 @@ export default class MessageList extends React.Component{
             });
         }
 
+    //map our message data to div's within a ul.
     render(){
         return(
             <ul>
