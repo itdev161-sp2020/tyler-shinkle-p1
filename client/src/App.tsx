@@ -5,18 +5,27 @@ import Modal from './modal';
 
 class App extends React.Component{
   
-  showModal(){
-    let modal=document.getElementsByClassName("modal");
+  state ={
+    showModal: false
+  }
+
+  stateChange = () =>{
+    this.setState({
+      showModal: !this.state.showModal
+    })
   }
 
   render(){
     return(
       <div className="App">
         <header className="App-header">
-          <p className="title">share<span id="add" onClick={()=>this.showModal()}>+</span></p>
-          <Modal/>
+          <p className="title">share<span id="add" onClick={()=>this.stateChange()}>+</span></p>
+          <div id="modalContainer" className={this.state.showModal ? '' : 'hidden'}>
+            <Modal/>
+          </div>
         </header>
         <div className="messages">
+          <p>Click on the '+' symbol to share a message with the world!</p>
           <MessageList/>
         </div>
       </div>

@@ -5,6 +5,8 @@ import axios from 'axios';
 import Message from './Message';
 
 export default class MessageList extends React.Component{
+    count=0;
+
     state={
         messages: Array<Message>()
     }
@@ -20,7 +22,7 @@ export default class MessageList extends React.Component{
     render(){
         return(
             <ul>
-                {this.state.messages.map(message => <div key={message.id}>{message.message}</div>)}
+                {this.state.messages.map(message => <div key={this.count++}>{message.message}</div>)}
             </ul>
         )
     }

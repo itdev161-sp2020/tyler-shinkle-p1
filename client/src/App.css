@@ -12,8 +12,20 @@
   text-align:center;
 }
 
+button{
+  display:block;
+  margin: 1em auto;
+  width: 50vw;
+  height: 3em;
+
+}
+
 .title{
   display: inline-block;
+}
+
+.hidden{
+  display:none;
 }
 
 #messageBox{
@@ -21,16 +33,21 @@
   width:80vw;
 }
 
+#modalContainer{
+  width:100vw;
+  height:100vh;
+  margin:auto;
+  position:fixed;
+}
+
 .modal{
+  padding:1em;
   height:100vh;
   width:100vw;
   color:black;
-  position:fixed;
   background-color: black;
   color:white;
-  padding:1em;
   z-index:10000;
-  display:none;
 }
 
 #add{
@@ -46,6 +63,7 @@
 .messages{
   width:90vw;
   margin:0 auto;
+  text-align: center;
 }
 
 .messages div{
